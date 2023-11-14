@@ -1,8 +1,5 @@
 // App.js
 import React, { useEffect, useState } from 'react';
-import NewPlantForm from './NewPlantForm';
-import PlantList from './PlantList';
-import PlantCard from './PlantCard';
 
 function App() {
   const [plants, setPlants] = useState([]);
@@ -54,13 +51,13 @@ function App() {
   return (
     <div>
       <h1>Plantsy</h1>
-      <NewPlantForm onAddPlant={handleAddPlant} />
+      <PlantForm onAddPlant={handleAddPlant} />
       <input
         type="text"
         placeholder="Search plants..."
         onChange={(e) => handleSearch(e.target.value)}
       />
-      <PlantList plants={filteredPlants} /> 
+      <PlantsContainer plants={filteredPlants} />
     </div>
   );
 }
